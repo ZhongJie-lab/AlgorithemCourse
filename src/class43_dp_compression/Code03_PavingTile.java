@@ -4,7 +4,7 @@ package class43_dp_compression;
 你有无限的1*2的砖块，要铺满M*N的区域，
 不同的铺法有多少种?
 */
-public class PavingTile {
+public class Code03_PavingTile {
     //暴力递归
     public static int ways1(int N, int M) {
         //1*2的砖块，必是偶数个格子才能贴满 ((N * M) & 1) == 0

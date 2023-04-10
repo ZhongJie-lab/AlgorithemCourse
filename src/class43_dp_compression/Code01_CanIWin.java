@@ -1,7 +1,7 @@
 package class43_dp_compression;
 
 //https://leetcode.cn/problems/can-i-win/
-public class CanIWin {
+public class Code01_CanIWin {
     //choose 拥有的数字
     //total 一开始的剩余
 
