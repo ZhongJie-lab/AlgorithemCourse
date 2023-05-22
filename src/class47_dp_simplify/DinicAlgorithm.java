@@ -1,4 +1,4 @@
-package class47_dp;
+package class47_dp_simplify;
 
 import java.util.ArrayList;
 import java.util.Arrays;

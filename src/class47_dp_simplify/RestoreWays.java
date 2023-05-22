@@ -1,4 +1,4 @@
-package class47_dp;
+package class47_dp_simplify;
 
 /*
 整型数组arr长度为n(3 <= n <= 10^4)，最初每个数字是<=200的正数且满足如下条件：

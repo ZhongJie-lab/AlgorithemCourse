@@ -1,4 +1,4 @@
-package class46_dp;
+package class46_dp_simplify;
 
 /*
 https://leetcode.cn/problems/burst-balloons/
