@@ -33,9 +33,9 @@ public class Sort {
         // 0 ~ 1
         //每一轮下来保证最大的数来到0 ~ end的最后
         for (int end = N - 1; end > 0; end--) {
-            for (int second = 1; second <= end; second++) { //两两比较，second是参与比较的第2个数
-                if (arr[second - 1] > arr[second]) {
-                    swap(second - 1, second, arr);
+            for (int i = 0; i < end; i++) { //两两比较，i是参与比较的左边的数，i + 1是参与比较的右边的数
+                if (arr[i] > arr[i + 1]) {
+                    swap(i, i + 1, arr);
                 }
             }
         }
@@ -140,12 +140,12 @@ public class Sort {
             int[] arr2 = TestTool.copyArray(arr1);
 
 //            selectionSort(arr1);
-            //bubbleSort(arr1);
+            bubbleSort(arr1);
 //            insertionSort(arr1);
 //            mergeSort(arr1);
 //            quickSort(arr1);
 //            MergeSort.mergeSortNonRecursive(arr1);
-            PartitionAndQuickSort.quickSort1(arr1);
+//            PartitionAndQuickSort.quickSort1(arr1);
 //            Code02_HeapSort.heapSort(arr1);
 
             TestTool.comparator(arr2);

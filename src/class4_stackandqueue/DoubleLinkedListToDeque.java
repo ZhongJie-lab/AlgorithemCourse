@@ -1,5 +1,6 @@
 package class4_stackandqueue;
 
+//链表实现双端队列
 public class DoubleLinkedListToDeque {
     public static class Node<V> {
         public V value;

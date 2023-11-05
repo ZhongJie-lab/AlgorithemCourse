@@ -1,5 +1,6 @@
 package class4_stackandqueue;
 
+//数组实现栈和队列
 public class ArrayToQueueAndStack {
     class My_Stack {
         private int size;

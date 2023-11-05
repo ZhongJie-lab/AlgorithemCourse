@@ -1,5 +1,6 @@
 package class4_stackandqueue;
 
+//链表实现栈和队列
 public class LinkedListToQueueAndStack {
     /*
      * 队列 先进先出 从队尾(tail)进，从队头(head)出

@@ -66,6 +66,53 @@ public class DeleteNode {
         return dummy.next;
     }
 
+    //https://leetcode.cn/problems/remove-duplicates-from-sorted-list/
+    public ListNode deleteDuplicates(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode curNode = head;
+        while (curNode.next != null) {
+            if (curNode.val == curNode.next.val) {
+                curNode.next = curNode.next.next;
+            } else {
+                curNode = curNode.next;
+            }
+        }
+        return head;
+    }
+
+    //https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/
+    public ListNode deleteDuplicatesII(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode pre = dummy;
+        ListNode cur = head;
+
+        while (cur != null) {
+            while (cur.next != null && cur.val == cur.next.val) {
+                cur = cur.next;
+            }
+            //分情况，pre和cur之间没有重复的
+            if (pre.next == cur) {
+                pre = pre.next;
+            } else {
+                pre.next = cur.next;
+            }
+            cur = cur.next;
+        }
+
+        return dummy.next;
+    }
+
+    //https://leetcode.cn/problems/delete-node-in-a-linked-list/
+    public void deleteNode(ListNode node) {
+
+    }
+
     public static class ListNode {
         int val;
         ListNode next;

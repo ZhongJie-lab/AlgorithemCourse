@@ -3,6 +3,7 @@ package class4_stackandqueue;
 import java.util.Stack;
 
 public class TwoStackImplementQueue {
+    //O(1)
     public static class QStack<T> {
         //2个栈，一个栈只负责放数据，另一个栈只负责弹出数据
         //当用户要数据时，把push栈里的元素倒入pop栈，则从pop栈里取到的数据就是

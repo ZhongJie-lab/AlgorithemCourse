@@ -46,4 +46,6 @@ public class TwoQueueImplementStack {
             return queue.isEmpty();
         }
     }
+
+    //1个queue实现栈 O(n)
 }
