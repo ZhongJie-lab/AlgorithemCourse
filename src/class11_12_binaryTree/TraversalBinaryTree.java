@@ -4,8 +4,8 @@ import java.util.*;
 
 public class TraversalBinaryTree {
 
-    //深度遍历
-    //先序遍历 https://leetcode-cn.com/problems/binary-tree-preorder-traversal/
+    //深度优先遍历
+    //先序遍历 递归 https://leetcode-cn.com/problems/binary-tree-preorder-traversal/
     List<Integer> ans = new ArrayList<>();
 
     public List<Integer> preorderTraversal(TreeNode root) {
@@ -14,6 +14,27 @@ public class TraversalBinaryTree {
         preorderTraversal(root.left);
         preorderTraversal(root.right);
         return ans;
+    }
+
+    //先序遍历 非递归
+    /**
+     * 把根结点推入栈中
+     * 从栈顶弹出一个结点，访问它，然后，该结点的右孩子入栈，再左孩子入栈
+     * 直到栈空
+     */
+    public List<Integer> preorderTraversalIII(TreeNode root) {
+        List<Integer> output = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        if (root == null) return output;
+        stack.push(root);
+
+        while(!stack.isEmpty()) {
+            TreeNode curr = stack.pop();
+            output.add(curr.val);
+            if (curr.right != null) stack.push(curr.right);
+            if (curr.left != null) stack.push(curr.left);
+        }
+        return output;
     }
 
     /**
@@ -40,27 +61,7 @@ public class TraversalBinaryTree {
         return output;
     }
 
-    /**
-     * 把根结点推入栈中
-     * 从栈顶弹出一个结点，访问它，然后，该结点的右孩子入栈，再左孩子入栈
-     * 直到栈空
-     */
-    public List<Integer> preorderTraversalIII(TreeNode root) {
-        List<Integer> output = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
-        if (root == null) return output;
-        stack.push(root);
-
-        while(!stack.isEmpty()) {
-            TreeNode curr = stack.pop();
-            output.add(curr.val);
-            if (curr.right != null) stack.push(curr.right);
-            if (curr.left != null) stack.push(curr.left);
-        }
-        return output;
-    }
-
-    //后序遍历 https://leetcode-cn.com/problems/binary-tree-postorder-traversal/
+    //后序遍历 递归 https://leetcode-cn.com/problems/binary-tree-postorder-traversal/
     public List<Integer> postorderTraversal(TreeNode root) {
         if (root == null) return ans;
         postorderTraversal(root.left);
@@ -69,6 +70,7 @@ public class TraversalBinaryTree {
         return ans;
     }
 
+    //后序遍历 非递归
     /**
      * 可以借鉴先序遍历
      * 如果得到中右左的排列，通过另一个栈或双端队列，反过来取值，得到左右中的排列
@@ -88,7 +90,7 @@ public class TraversalBinaryTree {
     }
 
 
-    //中序遍历 https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
+    //中序遍历 递归 https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
     public List<Integer> inOrderTraversal(TreeNode root) {
         if (root == null) return ans;
         inOrderTraversal(root.left);
@@ -97,6 +99,7 @@ public class TraversalBinaryTree {
         return ans;
     }
 
+    //中序遍历 非递归
     /**
      * 思想：
      * 遇到一个结点
@@ -140,7 +143,7 @@ public class TraversalBinaryTree {
         return ans;
     }
 
-    //宽度遍历
+    //宽度优先遍历
     public List<Integer> traversal(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
         if (root == null) return ans;

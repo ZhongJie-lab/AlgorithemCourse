@@ -2,6 +2,8 @@ package class4_stackandqueue;
 
 import java.util.Stack;
 
+//最小栈： push pop top 并能在常数时间内检索到最小元素的栈
+// 测试链接 : https://leetcode.cn/problems/min-stack/
 public class MinStack {
     class MyMinStack{
         private Stack<Integer> stack = new Stack<>();

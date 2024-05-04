@@ -1,6 +1,42 @@
 package class10_linkedList;
 
 public class SmallerEqualBigger {
+    // 给你一个链表的头节点 head 和一个特定值 x
+    // 请你对链表进行分隔，使得所有 小于 x 的节点都出现在 大于或等于 x 的节点之前。
+    // 你应当 保留 两个分区中每个节点的初始相对位置
+    // 测试链接 : https://leetcode.cn/problems/partition-list/
+    public static Node listPartition2(Node head, int x) {
+        Node leftHead = null, leftTail = null; // < x 的区域
+        Node rightHead = null, rightTail = null; // >= x 的区域
+        Node next = null;
+
+        while (head != null) {
+            next = head.next;
+            head.next = null; //为什么？
+            if (head.val < x) {
+                if (leftHead == null) {
+                    leftHead = head;
+                } else {
+                    leftTail.next = head;
+                }
+                leftTail = head; //尾结点来到下一个位置
+            } else {
+                if (rightHead == null) {
+                    rightHead = head;
+                } else {
+                    rightTail.next = head;
+                }
+                rightTail = head; //尾结点来到下一个位置
+            }
+            head = next;
+        }
+        if (leftHead == null) {
+            return rightHead;
+        }
+
+        leftTail.next = rightHead;
+        return leftHead;
+    }
     public static Node listPartition(Node head, int pivot) {
         Node sH = null;
         Node sT = null;

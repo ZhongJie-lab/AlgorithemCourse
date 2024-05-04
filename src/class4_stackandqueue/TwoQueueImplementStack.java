@@ -3,6 +3,7 @@ package class4_stackandqueue;
 import java.util.LinkedList;
 import java.util.Queue;
 
+//测试链接：https://leetcode.cn/problems/implement-stack-using-queues/
 public class TwoQueueImplementStack {
     //2个queue实现
     public static class StackByQ<T> {
